@@ -1,16 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Testing projects</title>
-</head>
-<body>
-    <h1>Hello World!
-    </h1>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100;
+        height: 100vh;
+      }
 
+      button {
+        padding: 8px 15px;
+        margin: 4px 10px;
+        background-color: rgb(62, 255, 62);
+        font-size: 20px;
+        border: 3px solid rgb(249, 249, 255);
+        border-radius: 10px;
+        font-weight: bold;
+      }
+
+      span{
+        color: rgb(63, 208, 31);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Count = <span>0</span></h1>
+    <br />
+    <div class="btn-container">
+      <button>Incrase Value</button>
+      <button id="btnTwo">Decrease Value</button>
+    </div>
 
     <script src="test.js"></script>
-</body>
+
+    <script>
+      let count = 0;
+      let span = document.querySelector("h1 span");
+      let btnOne = document.querySelector("button");
+      let btnTwo = document.querySelector("#btnTwo");
+      btnTwo.style.color = "vurliwood";
+      btnOne.style.color = "red";
+
+      btnOne.addEventListener("keypress", () => {
+        span.innerHTML = count++;
+      });
+      btnTwo.addEventListener("keypress", () => {
+        span.innerHTML = count--;
+      });
+    </script>
+  </body>
 </html>
